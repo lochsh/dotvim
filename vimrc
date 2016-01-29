@@ -1,6 +1,9 @@
 " .vimrc
-" Adam Greig
+" Original from: Adam Greig.  Thanks Adam!
 " https://github.com/adamgreig/dotvim
+"
+" Adjusted slightly by Hannah McLaughlin
+" https://github.com/lochsh/dotvim
 
 " vim is not vi
 set nocompatible
@@ -54,11 +57,11 @@ set autoindent
 
 " behaviour
 set backspace=indent,eol,start
-set mouse=a
+" set mouse=a
 set term=xterm-256color
 set modelines=0
 set textwidth=79
-set directory=~/.vim/tmp
+" set directory=~/.vim/tmp
 
 " appearance
 set encoding=utf-8
