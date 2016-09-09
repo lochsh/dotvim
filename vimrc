@@ -18,6 +18,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+set notitle
 " Utilities
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
@@ -29,6 +30,8 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/swap-parameters'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'lochsh/vim-kolor'
 
 " Language/Syntax Support
 Plugin 'kchmck/vim-coffee-script'
@@ -62,6 +65,8 @@ set term=xterm-256color
 set modelines=0
 set textwidth=79
 " set directory=~/.vim/tmp
+autocmd bufreadpre *.rs setlocal textwidth=99
+
 
 " appearance
 set encoding=utf-8
@@ -75,6 +80,8 @@ set showmode
 set visualbell
 set nofoldenable
 set ruler
+set number
+set relativenumber
 
 " searching
 set hlsearch
@@ -85,8 +92,11 @@ set ignorecase
 
 " colors
 syntax enable
-set background=dark
-colorscheme solarized
+let g:kolor_italic=1                 " Enable italic. Default: 1
+let g:kolor_bold=1                   " Enable bold. Default: 1
+let g:kolor_underlined=0             " Enable underline. Default: 0
+let g:kolor_alternative_matchparen=0 " Gray 'MatchParen' color. Default: 0
+colorscheme kolor
 
 " key bindings
 let mapleader = ","
@@ -105,6 +115,13 @@ nnoremap ` '
 " Use semicolon instead of colon to save shift key/fingers
 noremap ; :
 noremap : ;
+
+" disable arrow keys and Delete that I may be reborn anew as a purist
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap <Del> <NOP>
 
 " plugin key bindings
 nnoremap <F5> :GundoToggle<CR>
@@ -141,13 +158,13 @@ set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
 " syntastic
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['pep8', 'pyflakes']
 let g:syntastic_python_flake8_args = "--max-complexity 11"
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_pylint_args = "-j8 -E"
 
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_enable_signs = 1
@@ -172,3 +189,5 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+syn keyword pythonBuiltin self
