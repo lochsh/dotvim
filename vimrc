@@ -40,8 +40,9 @@ Plugin 'vim-scripts/opencl.vim'
 Plugin 'petRUShka/vim-pyopencl'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
+Plugin 'racer-rust/vim-racer'
 
 " To consider:
 "Plugin 'scrooloose/nerdtree'
@@ -65,7 +66,7 @@ set term=xterm-256color
 set modelines=0
 set textwidth=79
 " set directory=~/.vim/tmp
-autocmd bufreadpre *.rs setlocal textwidth=99
+autocmd FileType rust setlocal textwidth=99 colorcolumn=100
 
 
 " appearance
@@ -82,6 +83,8 @@ set nofoldenable
 set ruler
 set number
 set relativenumber
+set listchars=tab:›\ ,trail:·
+set list
 
 " searching
 set hlsearch
@@ -158,7 +161,7 @@ set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
 " syntastic
-let g:syntastic_python_checkers = ['pep8', 'pyflakes']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--max-complexity 11"
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_pylint_args = "-j8 -E"
@@ -189,5 +192,3 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-syn keyword pythonBuiltin self
