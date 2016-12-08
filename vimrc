@@ -32,6 +32,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'lochsh/vim-kolor'
+Plugin 'unblevable/quick-scope'
 
 " Language/Syntax Support
 Plugin 'kchmck/vim-coffee-script'
