@@ -32,6 +32,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'lochsh/vim-kolor'
+Plugin 'unblevable/quick-scope'
 
 " Language/Syntax Support
 Plugin 'kchmck/vim-coffee-script'
@@ -40,9 +41,10 @@ Plugin 'vim-scripts/opencl.vim'
 Plugin 'petRUShka/vim-pyopencl'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'racer-rust/vim-racer'
 
 " To consider:
 "Plugin 'scrooloose/nerdtree'
@@ -66,7 +68,7 @@ set term=xterm-256color
 set modelines=0
 set textwidth=79
 " set directory=~/.vim/tmp
-autocmd bufreadpre *.rs setlocal textwidth=99
+autocmd FileType rust setlocal textwidth=99 colorcolumn=100
 
 
 " appearance
@@ -84,6 +86,8 @@ set nofoldenable
 set ruler
 set number
 set relativenumber
+set listchars=tab:›\ ,trail:·
+set list
 
 " searching
 set hlsearch
@@ -191,5 +195,3 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-syn keyword pythonBuiltin self
