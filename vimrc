@@ -42,6 +42,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'wting/rust.vim'
 Plugin 'stephpy/vim-yaml'
+Plugin 'wlangstroth/vim-racket'
 
 " To consider:
 "Plugin 'scrooloose/nerdtree'
@@ -69,6 +70,7 @@ autocmd bufreadpre *.rs setlocal textwidth=99
 
 
 " appearance
+set cursorline
 set encoding=utf-8
 set termencoding=utf-8
 set colorcolumn=80
@@ -158,7 +160,7 @@ set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
 " syntastic
-let g:syntastic_python_checkers = ['pep8', 'pyflakes']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--max-complexity 11"
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_pylint_args = "-j8 -E"
