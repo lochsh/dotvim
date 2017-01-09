@@ -44,6 +44,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'racer-rust/vim-racer'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " To consider:
 "Plugin 'scrooloose/nerdtree'
@@ -193,3 +194,10 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+
+" vim-racer
+set hidden
+let g:racer_cmd = "/home/bit-beast/.cargo/bin/racer"
+let $RUST_SRC_PATH="/home/bit-beast/.cargo/src/rustc-1.8.0/src/"
+let $CARGO_HOME="/home/bit-beast/.cargo/"
