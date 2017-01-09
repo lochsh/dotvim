@@ -43,6 +43,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
+Plugin 'wlangstroth/vim-racket'
 Plugin 'racer-rust/vim-racer'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
@@ -72,6 +73,7 @@ autocmd FileType rust setlocal textwidth=99 colorcolumn=100
 
 
 " appearance
+set cursorline
 set encoding=utf-8
 set termencoding=utf-8
 set colorcolumn=80
