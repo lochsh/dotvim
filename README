@@ -8,7 +8,3 @@ Managed by Vundle, so install that on a new checkout:
 Finally move vimrc into place:
 
     $ ln -s vimrc ~/.vimrc
-    or
-    $ sudo rm /etc/vim/vimrc
-    $ sudo ln -s vimrc /etc/vim/vimrc
-    depending on your setup

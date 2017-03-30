@@ -27,7 +27,6 @@ Plugin 'wincent/Command-T'
 Plugin 'sjl/gundo.vim'
 Plugin 'briandoll/change-inside-surroundings.vim'
 Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/swap-parameters'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
@@ -165,13 +164,18 @@ set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
 " syntastic
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_flake8_args = "--max-complexity 11"
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_pylint_args = "-j8 -E"
+
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_cpplint_exec = 'cppcheck'
+let g:syntastic_cpp_checkers = ['cppcheck', 'gcc']
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_enable_signs = 1
@@ -196,10 +200,3 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-
-" vim-racer
-set hidden
-let g:racer_cmd = "/home/bit-beast/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/bit-beast/.cargo/src/rustc-1.8.0/src/"
-let $CARGO_HOME="/home/bit-beast/.cargo/"
