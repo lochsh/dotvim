@@ -5,12 +5,8 @@ Managed by Vundle, so install that on a new checkout:
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     $ vim +PluginInstall +qall
 
-I have found I need to be in the vim directory for last command.  I.e. in
-~/.vim or /etc/vim
-
-
 Finally move vimrc into place:
-    
+
     $ ln -s vimrc ~/.vimrc
     or
     $ sudo rm /etc/vim/vimrc
