@@ -29,16 +29,16 @@ Plugin 'briandoll/change-inside-surroundings.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/swap-parameters'
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'lochsh/vim-kolor'
 Plugin 'unblevable/quick-scope'
+Plugin 'tpope/vim-fugitive'
+
+" Colour schemes
+Plugin 'lochsh/vim-kolor'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'lu-ren/SerialExperimentsLain'
 
 " Language/Syntax Support
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
-Plugin 'vim-scripts/opencl.vim'
-Plugin 'petRUShka/vim-pyopencl'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'rust-lang/rust.vim'
@@ -46,11 +46,11 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'racer-rust/vim-racer'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'neovimhaskell/haskell-vim'
 
-" To consider:
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'jamessan/vim-gnupg'
+" Netrw settings
+let g:netrw_bufsettings = 'noma nomod nu relnu nowrap ro nobl'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -106,7 +106,7 @@ let g:kolor_alternative_matchparen=0 " Gray 'MatchParen' color. Default: 0
 colorscheme kolor
 
 " key bindings
-let mapleader = ","
+let mapleader = " "
 map <silent> <leader><space> ;noh<CR>
 " Highlight (line) to end of recently changed/yanked text
 nnoremap <leader>v V`]
@@ -200,6 +200,6 @@ endif
 
 " vim-racer
 set hidden
-let g:racer_cmd = "/home/bit-beast/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/bit-beast/.cargo/src/rustc-1.8.0/src/"
-let $CARGO_HOME="/home/bit-beast/.cargo/"
+let g:racer_cmd = "/home/hannah/.cargo/bin/racer"
+let $RUST_SRC_PATH="/home/hannah/.cargo/src/rustc-1.8.0/src/"
+let $CARGO_HOME="/home/hannah/.cargo/"
