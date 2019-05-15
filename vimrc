@@ -15,6 +15,7 @@ endif
 
 " load plugins via vundle
 filetype off
+set rtp+=~/.vim/plugin/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -23,7 +24,7 @@ set notitle
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'wincent/Command-T'
+Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'briandoll/change-inside-surroundings.vim'
 Plugin 'ervandew/supertab'
@@ -60,6 +61,9 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set autoindent
+
+" swp files
+set directory=/tmp
 
 " behaviour
 set backspace=indent,eol,start
@@ -206,3 +210,4 @@ set hidden
 let g:racer_cmd = "/home/hannah/.cargo/bin/racer"
 let $RUST_SRC_PATH="/home/hannah/.cargo/src/rustc-1.8.0/src/"
 let $CARGO_HOME="/home/hannah/.cargo/"
+set tags=tags
