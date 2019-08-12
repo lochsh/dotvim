@@ -19,12 +19,15 @@ set rtp+=~/.vim/plugin/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" fzf path
+set rtp+=/usr/local/opt/fzf
+
 set notitle
 " Utilities
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'briandoll/change-inside-surroundings.vim'
 Plugin 'ervandew/supertab'
@@ -40,7 +43,6 @@ Plugin 'lu-ren/SerialExperimentsLain'
 " Language/Syntax Support
 Plugin 'groenewege/vim-less'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'wlangstroth/vim-racket'
@@ -61,6 +63,10 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set autoindent
+
+"public/private in C++ at 1 space indent
+set cindent
+set cinoptions=g1
 
 " swp files
 set directory=/tmp
@@ -119,6 +125,8 @@ vmap <silent> <leader>d "_d
 " Easier enter/leave paste mode
 nmap <silent> <leader>o ;set paste<CR>
 nmap <silent> <leader>O ;set nopaste<CR>
+" Easier fzf
+nmap <silent> <leader>f ;Files .<CR>
 " Go to matching position with ', just line with `
 nnoremap ' `
 nnoremap ` '
@@ -162,6 +170,12 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=pandoc
 augroup end
 
+" quickscope customisation
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#ff5fd7' ctermfg=206
+augroup END
+
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
@@ -204,10 +218,3 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-" vim-racer
-set hidden
-let g:racer_cmd = "/home/hannah/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/hannah/.cargo/src/rustc-1.8.0/src/"
-let $CARGO_HOME="/home/hannah/.cargo/"
-set tags=tags
