@@ -2,7 +2,7 @@
 " Original from: Adam Greig.  Thanks Adam!
 " https://github.com/adamgreig/dotvim
 "
-" Adjusted slightly by Hannah McLaughlin
+" Adjusted substantially by Hannah McLaughlin
 " https://github.com/lochsh/dotvim
 
 " vim is not vi
@@ -37,24 +37,24 @@ Plugin 'tpope/vim-fugitive'
 
 " Colour schemes
 Plugin 'lochsh/vim-kolor'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'lu-ren/SerialExperimentsLain'
 
 " Language/Syntax Support
-Plugin 'groenewege/vim-less'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
-Plugin 'wlangstroth/vim-racket'
 Plugin 'racer-rust/vim-racer'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'neovimhaskell/haskell-vim'
 
 " Netrw settings
 let g:netrw_bufsettings = 'noma nomod nu relnu nowrap ro nobl'
 
 call vundle#end()
 filetype plugin indent on
+
+" ignore certain file extensions for fzf
+command! -bang -nargs=? -complete=dir
+  \ Files call fzf#vim#files(<q-args>,
+  \ {'source': 'rg --files -g "!*.{png,html,bin,dcm,md5,xml,IMA,o,gcno}"'}, <bang>0)
 
 " tabs and indentation
 set tabstop=4
@@ -127,6 +127,8 @@ nmap <silent> <leader>o ;set paste<CR>
 nmap <silent> <leader>O ;set nopaste<CR>
 " Easier fzf
 nmap <silent> <leader>f ;Files .<CR>
+nmap <silent> <leader>h ;BCommits<CR>
+nmap <silent> <leader>t ;Commits<CR>
 " Go to matching position with ', just line with `
 nnoremap ' `
 nnoremap ` '
@@ -169,12 +171,6 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=pandoc
 augroup end
-
-" quickscope customisation
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#ff5fd7' ctermfg=206
-augroup END
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
