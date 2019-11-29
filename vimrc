@@ -1,5 +1,5 @@
 " .vimrc
-" Original from: Adam Greig.  Thanks Adam!
+" Originally forked from: Adam Greig.  Thanks Adam!
 " https://github.com/adamgreig/dotvim
 "
 " Adjusted substantially by Hannah McLaughlin
@@ -8,10 +8,22 @@
 " vim is not vi
 set nocompatible
 
+" use old regex engine instead of outrageously slow new one
+" this one stupid line is necessary for vim to be usable on OS X at least, for
+" versions above 8.0.0642
+set re=1
+
 " use a more compatible shell
 if $SHELL =~ "fish"
     set shell=/bin/sh
 endif
+
+" support 24-bit colours
+"if exists('+termguicolors')
+  "let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  "let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  "set termguicolors
+"endif
 
 " load plugins via vundle
 filetype off
@@ -25,7 +37,7 @@ set rtp+=/usr/local/opt/fzf
 set notitle
 " Utilities
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/fzf.vim'
 Plugin 'sjl/gundo.vim'
@@ -34,9 +46,12 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
+Plugin 'chrisbra/csv.vim'
 
 " Colour schemes
 Plugin 'lochsh/vim-kolor'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='bubblegum'
 
 " Language/Syntax Support
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -44,6 +59,22 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'racer-rust/vim-racer'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'frazrepo/vim-rainbow'
+
+" rainbow parens
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \'ctermfgs': [42,80,176,141,180,121,63,222,69,198],
+    \'guis': [''],
+    \'cterms': [''],
+    \'operators': '_,_',
+    \'parentheses': [
+        \'start=/(/ end=/)/ fold',
+        \'start=/\[/ end=/\]/ fold',
+        \'start=/{/ end=/}/ fold',
+        \'start=/</ end=/>/ fold']
+\}
 
 " Netrw settings
 let g:netrw_bufsettings = 'noma nomod nu relnu nowrap ro nobl'
@@ -80,6 +111,7 @@ set textwidth=79
 " set directory=~/.vim/tmp
 autocmd FileType rust setlocal textwidth=99 colorcolumn=100
 
+set matchpairs+=<:>
 
 " appearance
 set cursorline
@@ -111,8 +143,15 @@ syntax enable
 let g:kolor_italic=1                 " Enable italic. Default: 1
 let g:kolor_bold=1                   " Enable bold. Default: 1
 let g:kolor_underlined=0             " Enable underline. Default: 0
-let g:kolor_alternative_matchparen=0 " Gray 'MatchParen' color. Default: 0
 colorscheme kolor
+
+" cpp highlighting
+let g:cpp_class_decl_highlight = 1
+
+" semantic highlighting
+" green, cyan, dark pink, blue, yellow, light pink, purple, orange, light
+" orange, light green, royal blue, warm yellow, cornflower blue, deep pink
+let g:semanticTermColors = [42,80,162,75,186,176,141,208,180,121,63,222,69,198]
 
 " key bindings
 let mapleader = " "
@@ -205,6 +244,8 @@ let g:pandoc#formatting#mode = 'ha'
 
 " always show a powerline
 set laststatus=2
+let g:airline_powerline_fonts = 1"
+
 " disable the amazingly annoying delay reverting to command mode
 if ! has('gui_running')
     set ttimeoutlen=10
