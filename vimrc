@@ -64,17 +64,20 @@ Plugin 'frazrepo/vim-rainbow'
 
 " rainbow parens
 let g:rainbow_active = 1
-let g:rainbow_conf = {
-    \'ctermfgs': [42,80,176,141,180,121,63,222,69,198],
-    \'guis': [''],
-    \'cterms': [''],
-    \'operators': '_,_',
-    \'parentheses': [
-        \'start=/(/ end=/)/ fold',
-        \'start=/\[/ end=/\]/ fold',
-        \'start=/{/ end=/}/ fold',
-        \'start=/</ end=/>/ fold']
-\}
+let g:rainbow_ctermfgs = [
+    \ 'brown',
+    \ 'Darkblue',
+    \ 'darkgray',
+    \ 'darkgreen',
+    \ 'darkcyan',
+    \ 'darkmagenta',
+    \ 'gray',
+    \ 208,
+    \ 'Darkblue',
+    \ 'darkgreen',
+    \ 'darkcyan',
+    \ 198,
+    \ ]
 
 " Netrw settings
 let g:netrw_bufsettings = 'noma nomod nu relnu nowrap ro nobl'
