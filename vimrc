@@ -98,7 +98,7 @@ set expandtab
 set smarttab
 set autoindent
 
-"public/private in C++ at 1 space indent
+" public/private in C++ at 1 space indent
 set cindent
 set cinoptions=g1
 
@@ -107,11 +107,10 @@ set directory=/tmp
 
 " behaviour
 set backspace=indent,eol,start
-" set mouse=a
 set term=xterm-256color
 set modelines=0
 set textwidth=79
-" set directory=~/.vim/tmp
+set directory=~/.vim/tmp
 autocmd FileType rust setlocal textwidth=99 colorcolumn=100
 
 set matchpairs+=<:>
