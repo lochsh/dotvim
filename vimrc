@@ -32,13 +32,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " fzf path
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf/bin/fzf
 
 set notitle
 " Utilities
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'briandoll/change-inside-surroundings.vim'
@@ -57,7 +58,6 @@ let g:airline_theme='bubblegum'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
-Plugin 'racer-rust/vim-racer'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'frazrepo/vim-rainbow'
@@ -219,7 +219,7 @@ set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
 " syntastic
-let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--max-complexity 11"
 let g:syntastic_python_pylint_args = "-j8 -E"
 
