@@ -48,6 +48,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chrisbra/csv.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'LnL7/vim-nix'
 
 " Colour schemes
 Plugin 'lochsh/vim-kolor'
@@ -88,7 +90,7 @@ filetype plugin indent on
 " ignore certain file extensions for fzf
 command! -bang -nargs=? -complete=dir
   \ Files call fzf#vim#files(<q-args>,
-  \ {'source': 'rg --files -g "!*.{png,html,bin,dcm,md5,xml,IMA,o,gcno}"'}, <bang>0)
+  \ {'source': 'rg --files -g "!*.{png,bin,dcm,md5,xml,IMA,o,gcno}"'}, <bang>0)
 
 " tabs and indentation
 set tabstop=4
@@ -110,8 +112,8 @@ set backspace=indent,eol,start
 set term=xterm-256color
 set modelines=0
 set textwidth=79
-set directory=~/.vim/tmp
 autocmd FileType rust setlocal textwidth=99 colorcolumn=100
+autocmd FileType python setlocal textwidth=88 colorcolumn=89
 
 set matchpairs+=<:>
 
@@ -208,6 +210,7 @@ autocmd BufNewFile,BufRead *.json set tw=0
 autocmd BufNewFile,BufRead *.ebnf set filetype=ebnf
 autocmd BufNewFile,BufRead *.cl set filetype=opencl
 autocmd BufNewFile,BufRead *.sls set filetype=yaml
+autocmd BufNewFile,BufRead poetry.lock set filetype=toml
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=pandoc
@@ -243,6 +246,7 @@ let g:syntastic_style_warning_symbol = "😕"
 " pandoc
 let g:pandoc_use_hard_wraps = 1
 let g:pandoc#formatting#mode = 'ha'
+let g:pandoc#syntax#style#emphases = 0
 
 " always show a powerline
 set laststatus=2
