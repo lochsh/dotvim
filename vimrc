@@ -211,6 +211,7 @@ autocmd BufNewFile,BufRead *.ebnf set filetype=ebnf
 autocmd BufNewFile,BufRead *.cl set filetype=opencl
 autocmd BufNewFile,BufRead *.sls set filetype=yaml
 autocmd BufNewFile,BufRead poetry.lock set filetype=toml
+autocmd BufNewFile,BufRead *.service set filetype=systemd
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=pandoc
