@@ -216,6 +216,7 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=pandoc
 augroup end
+au BufRead,BufNewFile *.qasm set filetype=qasm
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
