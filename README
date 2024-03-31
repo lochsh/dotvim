@@ -1,10 +1,4 @@
 My vim files.
 
-Managed by Vundle, so install that on a new checkout:
-
-    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    $ vim +PluginInstall +qall
-
-Finally move vimrc into place:
-
-    $ ln -s vimrc ~/.vimrc
+Checkout as ~/.vim
+`git submodule update --init`

@@ -25,44 +25,10 @@ endif
   "set termguicolors
 "endif
 
-" load plugins via vundle
-filetype off
-set rtp+=~/.vim/plugin/Vundle.vim
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
 " fzf path
 set rtp+=~/.fzf/bin/fzf
 
 set notitle
-" Utilities
-Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'briandoll/change-inside-surroundings.vim'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'unblevable/quick-scope'
-Plugin 'tpope/vim-fugitive'
-Plugin 'chrisbra/csv.vim'
-Plugin 'cespare/vim-toml'
-Plugin 'LnL7/vim-nix'
-
-" Colour schemes
-Plugin 'lochsh/vim-kolor'
-Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='bubblegum'
-
-" Language/Syntax Support
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'rust-lang/rust.vim'
-Plugin 'stephpy/vim-yaml'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'jaxbot/semantic-highlight.vim'
-Plugin 'frazrepo/vim-rainbow'
 
 " rainbow parens
 let g:rainbow_active = 1
@@ -84,7 +50,6 @@ let g:rainbow_ctermfgs = [
 " Netrw settings
 let g:netrw_bufsettings = 'noma nomod nu relnu nowrap ro nobl'
 
-call vundle#end()
 filetype plugin indent on
 
 " ignore certain file extensions for fzf
@@ -148,6 +113,7 @@ let g:kolor_italic=1                 " Enable italic. Default: 1
 let g:kolor_bold=1                   " Enable bold. Default: 1
 let g:kolor_underlined=0             " Enable underline. Default: 0
 colorscheme kolor
+let g:airline_theme='bubblegum'
 
 " cpp highlighting
 let g:cpp_class_decl_highlight = 1

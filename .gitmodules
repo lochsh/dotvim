@@ -1,0 +1,124 @@
+[submodule "pack/plugins/start/vim-airline"]
+	path = pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+    shallow = true
+
+# Better commenting out of code
+[submodule "pack/plugins/start/nerdcommenter"]
+	path = pack/plugins/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+    shallow = true
+
+# Fuzzy file finder integration
+[submodule "pack/plugins/start/fzf"]
+	path = pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
+    shallow = true
+
+# Fuzzy file finder integration
+[submodule "pack/plugins/start/fzf.vim"]
+	path = pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+    shallow = true
+
+# View undo tree
+[submodule "pack/plugins/start/gundo.vim"]
+	path = pack/plugins/start/gundo.vim
+	url = https://github.com/sjl/gundo.vim
+    shallow = true
+
+# Select inner-most surroundings (e.g. inside brackets) to replace
+[submodule "pack/plugins/start/change-inside-surroundings.vim"]
+	path = pack/plugins/start/change-inside-surroundings.vim
+	url = https://github.com/briandoll/change-inside-surroundings.vim
+    shallow = true
+
+[submodule "pack/plugins/start/supertab"]
+	path = pack/plugins/start/supertab
+	url = https://github.com/ervandew/supertab
+    shallow = true
+
+# Syntax highlighting
+[submodule "pack/plugins/start/syntastic"]
+	path = pack/plugins/start/syntastic
+	url = https://github.com/scrooloose/syntastic
+    shallow = true
+
+# Better in-line navigation
+[submodule "pack/plugins/start/quick-scope"]
+	path = pack/plugins/start/quick-scope
+	url = https://github.com/unblevable/quick-scope
+    shallow = true
+
+# Git integration e.g. blame
+[submodule "pack/plugins/start/vim-fugitive"]
+	path = pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+    shallow = true
+
+# CSV tools
+[submodule "pack/plugins/start/csv.vim"]
+	path = pack/plugins/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
+    shallow = true
+
+[submodule "pack/plugins/start/vim-toml"]
+	path = pack/plugins/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+    shallow = true
+
+[submodule "pack/plugins/start/vim-nix"]
+	path = pack/plugins/start/vim-nix
+	url = https://github.com/LnL7/vim-nix
+    shallow = true
+
+# syntax for armv4/5/6/7 assembly, used for .s/.S files by default
+[submodule "pack/plugins/start/arm-syntax-vim"]
+	path = pack/plugins/start/arm-syntax-vim
+	url = https://github.com/ARM9/arm-syntax-vim
+    shallow = true
+
+# Pandoc highlighting for markdown
+[submodule "pack/plugins/start/vim-pandoc-syntax"]
+	path = pack/plugins/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+    shallow = true
+
+[submodule "pack/plugins/start/rust.vim"]
+	path = pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+    shallow = true
+
+[submodule "pack/plugins/start/vim-yaml"]
+	path = pack/plugins/start/vim-yaml
+	url = https://github.com/stephpy/vim-yaml
+    shallow = true
+
+[submodule "pack/plugins/start/vim-cpp-enhanced-highlight"]
+	path = pack/plugins/start/vim-cpp-enhanced-highlight
+	url = https://github.com/octol/vim-cpp-enhanced-highlight
+    shallow = true
+
+# Option for semantic highlighting
+[submodule "pack/plugins/start/semantic-highlight.vim"]
+	path = pack/plugins/start/semantic-highlight.vim
+	url = https://github.com/jaxbot/semantic-highlight.vim
+    shallow = true
+
+# Rainbow brackets
+[submodule "pack/plugins/start/vim-rainbow"]
+	path = pack/plugins/start/vim-rainbow
+	url = https://github.com/frazrepo/vim-rainbow
+    shallow = true
+
+# Colour scheme
+[submodule "pack/plugins/start/vim-kolor"]
+	path = pack/plugins/start/vim-kolor
+	url = https://github.com/lochsh/vim-kolor
+    shallow = true
+
+# Airline colourschemes
+[submodule "pack/plugins/start/vim-airline-themes"]
+	path = pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+    shallow = true
