@@ -165,7 +165,7 @@ nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
 autocmd FileType make setlocal noexpandtab
 autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2
 autocmd FileType html setlocal softtabstop=2 shiftwidth=2
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
