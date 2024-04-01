@@ -128,9 +128,6 @@ let mapleader = " "
 map <silent> <leader><space> ;noh<CR>
 " Highlight (line) to end of recently changed/yanked text
 nnoremap <leader>v V`]
-" Delete to _ register instead of default
-nmap <silent> <leader>d "_d
-vmap <silent> <leader>d "_d
 " Easier enter/leave paste mode
 nmap <silent> <leader>o ;set paste<CR>
 nmap <silent> <leader>O ;set nopaste<CR>
