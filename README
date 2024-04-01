@@ -8,3 +8,4 @@ On system:
 * Install [`rust-analyzer`](https://github.com/rust-lang/rust-analyzer)
 * Install [`ruff`](https://github.com/astral-sh/ruff)
 * Install [`fzf`](https://github.com/junegunn/fzf)
+* Install [`jedi`](https://github.com/davidhalter/jedi)

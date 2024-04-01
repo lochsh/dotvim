@@ -194,7 +194,7 @@ let g:ale_sign_error = "✗"
 let g:ale_sign_warning = "⚠️"
 let g:ale_style_error_symbol = "😞"
 let g:ale_style_warning_symbol = "😕"
-let g:ale_linters = {"rust": ["analyzer"], "cpp": ["cppcheck", "gcc"], "c": ["cc"], "python": ["ruff"] }
+let g:ale_linters = {"rust": ["analyzer"], "cpp": ["cppcheck", "gcc"], "c": ["cc"], "python": ["ruff", "jedi"] }
 let g:ale_fixers = {"python": ["ruff"] }
 let g:ale_cpp_cc_options = "-std=c++14 -Wall -Wextra -stdlib=libc++"
 let g:ale_c_cc_options = "-std=c99 -Wall -Wextra"
@@ -202,6 +202,9 @@ let g:ale_python_ruff_options = "--select E,F,B,UP,SIM"
 let g:ale_rust_analyzer_config = {
     \ "checkOnSave":    { "allTargets": v:false },
 \}
+
+" Jedi
+let g:jedi#popup_on_dot = 0
 
 " pandoc
 let g:pandoc_use_hard_wraps = 1
