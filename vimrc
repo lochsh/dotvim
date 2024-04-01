@@ -189,27 +189,19 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 highlight Pmenu ctermbg=238 gui=bold
 
-" syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = "--max-complexity 11"
-let g:syntastic_python_pylint_args = "-j8 -E"
-
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_cpplint_exec = 'cppcheck'
-let g:syntastic_cpp_checkers = ['cppcheck', 'gcc']
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_enable_signs = 1
-
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_error_symbol = "😞"
-let g:syntastic_style_warning_symbol = "😕"
+" ALE
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠️"
+let g:ale_style_error_symbol = "😞"
+let g:ale_style_warning_symbol = "😕"
+let g:ale_linters = {"rust": ["analyzer"], "cpp": ["cppcheck", "gcc"], "c": ["cc"], "python": ["ruff"] }
+let g:ale_fixers = {"python": ["ruff"] }
+let g:ale_cpp_cc_options = "-std=c++14 -Wall -Wextra -stdlib=libc++"
+let g:ale_c_cc_options = "-std=c99 -Wall -Wextra"
+let g:ale_python_ruff_options = "--select E,F,B,UP,SIM"
+let g:ale_rust_analyzer_config = {
+    \ "checkOnSave":    { "allTargets": v:false },
+\}
 
 " pandoc
 let g:pandoc_use_hard_wraps = 1

@@ -39,12 +39,6 @@
     shallow = true
 
 # Syntax highlighting
-[submodule "pack/plugins/start/syntastic"]
-	path = pack/plugins/start/syntastic
-	url = https://github.com/scrooloose/syntastic
-    shallow = true
-
-# Better in-line navigation
 [submodule "pack/plugins/start/quick-scope"]
 	path = pack/plugins/start/quick-scope
 	url = https://github.com/unblevable/quick-scope
@@ -122,3 +116,8 @@
 	path = pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
     shallow = true
+
+# Linting and LSP
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale
