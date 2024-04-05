@@ -205,6 +205,9 @@ let g:ale_lint_on_insert_leave = 0
 
 " Jedi
 let g:jedi#popup_on_dot = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = 0
 
 " pandoc
 let g:pandoc_use_hard_wraps = 1
