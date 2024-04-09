@@ -195,7 +195,7 @@ let g:ale_linters = {"rust": ["analyzer"], "cpp": ["cppcheck", "gcc"], "c": ["cc
 let g:ale_fixers = {"python": ["ruff"] }
 let g:ale_cpp_cc_options = "-std=c++14 -Wall -Wextra -stdlib=libc++"
 let g:ale_c_cc_options = "-std=c99 -Wall -Wextra"
-let g:ale_python_ruff_options = "--select E,F,B,UP,SIM"
+let g:ale_python_ruff_options = "--select E,F,B,SIM"
 let g:ale_rust_analyzer_config = {
     \ "checkOnSave":    { "allTargets": v:false },
 \}
