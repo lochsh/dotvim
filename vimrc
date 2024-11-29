@@ -123,6 +123,10 @@ let g:cpp_class_decl_highlight = 1
 " orange, light green, royal blue, warm yellow, cornflower blue, deep pink
 let g:semanticTermColors = [42,80,162,75,186,176,141,208,180,121,63,222,69,198]
 
+let g:fzf_action = {
+   \ 'ctrl-y': ':%w !xclip -selection clipboard',
+\}
+
 " key bindings
 let mapleader = " "
 map <silent> <leader><space> ;noh<CR>
