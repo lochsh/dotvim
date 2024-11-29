@@ -188,6 +188,7 @@ au BufRead,BufNewFile *.qasm set filetype=qasm
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+let g:SuperTabContextTextOmniPrecedence = ["&completefunc"]
 highlight Pmenu ctermbg=238 gui=bold
 
 " ALE
